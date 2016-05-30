@@ -12,18 +12,17 @@ namespace Simple_Timer
     {
         private TimerModel tMod = new TimerModel();
 
-        private bool _running = false;
         private System.Threading.Thread _timerThread;
 
         public MainWindowVM()
         {
-            _timerThread =  new System.Threading.Thread(tMod.Run);
+            _timerThread =  new System.Threading.Thread(Run);
             _timerThread.Start();
         }
 
         public string Seconds
         {
-            get { return tMod.Seconds.ToString(); }
+            get { return tMod.Seconds.ToString("00.000"); }
             set { tMod.Seconds = Convert.ToDouble(value);
                 RaisePropertyChanged("Seconds");
             }
@@ -31,9 +30,21 @@ namespace Simple_Timer
 
         public string Minutes
         {
-            get { return tMod.Minutes.ToString(); }
+            get { return tMod.Minutes.ToString("00"); }
             set { tMod.Minutes = Convert.ToInt64(value);
                 RaisePropertyChanged("Minutes");
+            }
+        }
+
+        public void Run()
+        {
+            while(true)
+            {
+                if(tMod.UpdateTime())
+                {
+                    RaisePropertyChanged("Seconds");
+                    RaisePropertyChanged("Minutes");
+                }
             }
         }
 

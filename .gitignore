@@ -15,3 +15,5 @@ Simple Timer/obj/Debug/Simple Timer.g.resources
 *.pdb
 Simple Timer/obj/Debug/Simple_Timer.Properties.Resources.resources
 *.dll
+*.cache
+Simple Timer/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
