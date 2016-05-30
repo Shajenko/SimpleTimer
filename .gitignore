@@ -6,3 +6,12 @@ Simple Timer/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 Simple Timer/obj/Debug/Simple Timer.csproj.FileListAbsolute.txt
 *.cache
 Simple Timer/obj/Debug/MainWindow.g.i.cs
+*.exe
+Simple Timer/bin/Debug/Simple Timer.pdb
+*.baml
+.vs/SimpleTimer/v14/.suo
+Simple Timer/obj/Debug/GeneratedInternalTypeHelper.g.cs
+Simple Timer/obj/Debug/Simple Timer.g.resources
+*.pdb
+Simple Timer/obj/Debug/Simple_Timer.Properties.Resources.resources
+*.dll
