@@ -22,7 +22,7 @@ namespace Simple_Timer
 
         public string Seconds
         {
-            get { return tMod.Seconds.ToString(); }
+            get { return tMod.Seconds.ToString("00.000"); }
             set { tMod.Seconds = Convert.ToDouble(value);
                 RaisePropertyChanged("Seconds");
             }
@@ -30,7 +30,7 @@ namespace Simple_Timer
 
         public string Minutes
         {
-            get { return tMod.Minutes.ToString(); }
+            get { return tMod.Minutes.ToString("00"); }
             set { tMod.Minutes = Convert.ToInt64(value);
                 RaisePropertyChanged("Minutes");
             }
