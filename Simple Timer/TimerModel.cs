@@ -40,23 +40,21 @@ namespace Simple_Timer
             Minutes = 0;
         }
 
-        public bool UpdateTime()
+        public void Run()
         {
-            if (_running)
+            if(_running)
             {
                 TimeSpan delta;
                 _currentTime = DateTime.Now;
                 delta = (_currentTime - _previousTime);
                 Seconds += delta.TotalSeconds;
-                if (Seconds >= 60.0)
+                if(Seconds >= 60.0)
                 {
                     Seconds -= 60.0;
                     Minutes++;
                 }
-                _previousTime = DateTime.Now;
-                return true;
             }
-            return false;
+            Thread.Sleep(1);
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Windows.Input;
 
 namespace Simple_Timer
 {
+
     public class RelayCommand : ICommand
     {
         #region Members
