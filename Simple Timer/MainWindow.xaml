@@ -5,19 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simple_Timer"
         mc:Ignorable="d"
-        Title="Timer" Height="189.384" Width="391.667" Opacity="0.9" BorderThickness="2" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize">
+        Title="Timer" Height="195.098" Width="391.667" Opacity="0.9" BorderThickness="2" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize">
     <Window.Effect>
         <BlurEffect Radius="1"/>
     </Window.Effect>
-    <Window.DataContext>
-        <local:MainWindowVM/>
-    </Window.DataContext>
     <Grid>
-        <TextBox x:Name="textBoxMinutes" Text="{Binding Minutes}" HorizontalAlignment="Left" Height="69" Margin="20,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" FontSize="32" TextAlignment="Right"/>
-        <TextBox x:Name="textBoxSeconds" Text="{Binding Seconds}" HorizontalAlignment="Left" Height="69" Margin="206,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" FontSize="32" TextAlignment="Right"/>
-        <Button x:Name="Reset" Content="Reset" HorizontalAlignment="Left" Height="35" Margin="20,104,0,0" VerticalAlignment="Top" Width="146" Command="{Binding ResetButtonCommand}"/>
-        <Button x:Name="StartStop" Content="Start/Stop" Height="35" Margin="206,104,0,0" VerticalAlignment="Top" Command="{Binding ToggleButtonCommand}" HorizontalAlignment="Left" Width="146"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="69" Margin="172,10,0,0" TextWrapping="Wrap" Text=":" VerticalAlignment="Top" Width="29" FontSize="32" TextAlignment="Center"/>
+        <TextBox x:Name="textBoxMinutes" Text="{Binding Minutes}" HorizontalAlignment="Left" Height="69" Margin="20,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" FontSize="32"/>
+        <TextBox x:Name="textBoxSeconds" Text="{Binding Seconds}" HorizontalAlignment="Left" Height="69" Margin="224,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" FontSize="32"/>
+        <Button x:Name="Reset" Content="Reset" HorizontalAlignment="Left" Height="35" Margin="20,104,0,0" VerticalAlignment="Top" Width="146"/>
+        <Button x:Name="StartStop" Content="Start/Stop" HorizontalAlignment="Left" Height="35" Margin="224,104,0,0" VerticalAlignment="Top" Width="146"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="69" Margin="172,10,164,0" TextWrapping="Wrap" Text=":" VerticalAlignment="Top" Width="48" FontSize="32" TextAlignment="Center"/>
 
     </Grid>
 </Window>
