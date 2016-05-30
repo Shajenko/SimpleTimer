@@ -1,0 +1,20 @@
+﻿<Window x:Class="Simple_Timer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Simple_Timer"
+        mc:Ignorable="d"
+        Title="Timer" Height="195.098" Width="391.667" Opacity="0.9" BorderThickness="2" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize">
+    <Window.Effect>
+        <BlurEffect Radius="1"/>
+    </Window.Effect>
+    <Grid>
+        <TextBox x:Name="textBoxMinutes" Text="{Binding Minutes}" HorizontalAlignment="Left" Height="69" Margin="20,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" FontSize="32"/>
+        <TextBox x:Name="textBoxSeconds" Text="{Binding Seconds}" HorizontalAlignment="Left" Height="69" Margin="224,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" FontSize="32"/>
+        <Button x:Name="Reset" Content="Reset" HorizontalAlignment="Left" Height="35" Margin="20,104,0,0" VerticalAlignment="Top" Width="146"/>
+        <Button x:Name="StartStop" Content="Start/Stop" HorizontalAlignment="Left" Height="35" Margin="224,104,0,0" VerticalAlignment="Top" Width="146"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="69" Margin="172,10,164,0" TextWrapping="Wrap" Text=":" VerticalAlignment="Top" Width="48" FontSize="32" TextAlignment="Center"/>
+
+    </Grid>
+</Window>
