@@ -2,7 +2,6 @@ c:\users\tim\documents\visual studio 2015\Projects\SimpleTimer\Simple Timer\bin\
 C:\Users\Tim\Documents\GitHub\SimpleTimer\Simple Timer\bin\Debug\Simple Timer.exe.config
 C:\Users\Tim\Documents\GitHub\SimpleTimer\Simple Timer\bin\Debug\Simple Timer.exe
 C:\Users\Tim\Documents\GitHub\SimpleTimer\Simple Timer\bin\Debug\Simple Timer.pdb
-C:\Users\Tim\Documents\GitHub\SimpleTimer\Simple Timer\obj\Debug\Simple Timer.csprojResolveAssemblyReference.cache
 C:\Users\Tim\Documents\GitHub\SimpleTimer\Simple Timer\obj\Debug\MainWindow.g.cs
 C:\Users\Tim\Documents\GitHub\SimpleTimer\Simple Timer\obj\Debug\App.g.cs
 C:\Users\Tim\Documents\GitHub\SimpleTimer\Simple Timer\obj\Debug\Simple Timer_MarkupCompile.cache
@@ -14,3 +13,5 @@ C:\Users\Tim\Documents\GitHub\SimpleTimer\Simple Timer\obj\Debug\Simple Timer.cs
 C:\Users\Tim\Documents\GitHub\SimpleTimer\Simple Timer\obj\Debug\Simple Timer.exe
 C:\Users\Tim\Documents\GitHub\SimpleTimer\Simple Timer\obj\Debug\Simple Timer.pdb
 C:\Users\Tim\Documents\GitHub\SimpleTimer\Simple Timer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Tim\Documents\GitHub\SimpleTimer\Simple Timer\obj\Debug\Simple Timer.csprojAssemblyReference.cache
+C:\Users\Tim\Documents\GitHub\SimpleTimer\Simple Timer\obj\Debug\Simple Timer.csproj.CoreCompileInputs.cache

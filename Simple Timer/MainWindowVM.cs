@@ -20,10 +20,25 @@ namespace Simple_Timer
             _timerThread.Start();
         }
 
+        ~MainWindowVM()
+        {
+            _timerThread.Abort();
+        }
+
+        public string Milliseconds
+        {
+            get { return tMod.Milliseconds.ToString("000"); }
+            set
+            {
+                tMod.Milliseconds = (long)(Convert.ToUInt64(value));
+                RaisePropertyChanged("Milliseconds");
+            }
+        }
+
         public string Seconds
         {
-            get { return tMod.Seconds.ToString("00.000"); }
-            set { tMod.Seconds = Convert.ToDouble(value);
+            get { return tMod.Seconds.ToString("00"); }
+            set { tMod.Seconds = Convert.ToInt64(value);
                 RaisePropertyChanged("Seconds");
             }
         }
@@ -42,6 +57,7 @@ namespace Simple_Timer
             {
                 if(tMod.UpdateTime())
                 {
+                    RaisePropertyChanged("Milliseconds");
                     RaisePropertyChanged("Seconds");
                     RaisePropertyChanged("Minutes");
                 }
@@ -68,6 +84,7 @@ namespace Simple_Timer
         void ResetExecute()
         {
             tMod.Reset();
+            RaisePropertyChanged("Milliseconds");
             RaisePropertyChanged("Seconds");
             RaisePropertyChanged("Minutes");
         }

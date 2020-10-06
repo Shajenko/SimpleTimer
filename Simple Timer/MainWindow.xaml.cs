@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.ComponentModel; // CancelEventArgs
 
 
 namespace Simple_Timer
@@ -11,6 +12,12 @@ namespace Simple_Timer
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        void DataWindow_Closing(object sender, CancelEventArgs e)
+        {
+            System.Environment.Exit(0);
+            // Kill all threads
         }
     }
 }
