@@ -12,6 +12,8 @@ namespace Simple_Timer
         public long Seconds { get; internal set; }
         public long Minutes { get; internal set; }
 
+        public bool Running { get { return _running; } }
+
         private bool _running = false;
         private DateTime _previousTime, _currentTime;
 
@@ -23,16 +25,31 @@ namespace Simple_Timer
             Minutes = 0;
             _previousTime = DateTime.Now;
             _currentTime = DateTime.Now;
+            Console.WriteLine("Creating TimerModel");
         }
 
         public void ToggleRunning()
         {
-            _running = !_running;
-            if(_running)
+            // make sure to avoid threading issues
+
+            TimeSpan delta;
+            if(!_running)
             {
-                _previousTime = DateTime.Now;
+                Console.WriteLine("Restarting timer");
                 _currentTime = DateTime.Now;
-                UpdateTime();
+                _previousTime = _currentTime;
+                delta = (_currentTime - _previousTime);
+                Console.WriteLine("delta.TotalMilliseconds: " + $"{delta.TotalMilliseconds,1:f}");
+                // UpdateTime called in MainWindowVM, no need to call it here
+                _running = true;
+            }
+            else
+            {
+                _running = false;
+                Console.WriteLine("Pausing Timer");
+                _currentTime = DateTime.Now;
+                _previousTime = _currentTime;
+                delta = (_currentTime - _previousTime);
             }
         }
 
@@ -42,20 +59,28 @@ namespace Simple_Timer
             Milliseconds = 0.0;
             Seconds = 0;
             Minutes = 0;
-            UpdateTime();
+            _currentTime = DateTime.Now;
+            _previousTime = _currentTime;
         }
 
         public bool UpdateTime()
         {
             double doubRemainder;
             long longRemainder;
-            long dividend;
+            long dividend = 0;
             if (_running)
             {
                 TimeSpan delta;
                 _currentTime = DateTime.Now;
                 delta = (_currentTime - _previousTime);
                 Milliseconds += delta.TotalMilliseconds;
+
+                if (delta.TotalMilliseconds > 2000.0)
+                {
+                    Console.WriteLine("Too many milliseconds.\n");
+                    Console.WriteLine("Milliseconds: " + $"{delta.TotalMilliseconds,2:f}" + "\n");
+                    throw new Exception("Too many milliseconds");  // Exception thrown after toggle, bug somewhere
+                }
                 if (Milliseconds >= 1000.0)
                 {
                     doubRemainder = Milliseconds % 1000.0;
@@ -63,18 +88,25 @@ namespace Simple_Timer
                     Milliseconds = doubRemainder;
                     Seconds += dividend;
                 }
+                if (Seconds >= 120)
+                    throw new Exception("Too many seconds");
 
                 if(Seconds >= 60)
                 {
                     longRemainder = Seconds % 60;
-                    dividend = Seconds / 60;
                     Seconds = longRemainder;
-                    Minutes += dividend;
+                    Minutes++;
                 }
+                if (delta.TotalMilliseconds < 1.0)
+                {
+                    Thread.Sleep(1);
+                }
+
 
                 _previousTime = _currentTime;
                 return true;
             }
+
             return false;
         }
     }

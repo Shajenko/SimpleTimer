@@ -16,6 +16,7 @@ namespace Simple_Timer
 
         void DataWindow_Closing(object sender, CancelEventArgs e)
         {
+            this.Hide();
             System.Environment.Exit(0);
             // Kill all threads
         }

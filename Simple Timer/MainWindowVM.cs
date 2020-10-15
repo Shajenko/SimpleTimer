@@ -55,12 +55,16 @@ namespace Simple_Timer
         {
             while(true)
             {
-                if(tMod.UpdateTime())
+                if(tMod.Running)
                 {
-                    RaisePropertyChanged("Milliseconds");
-                    RaisePropertyChanged("Seconds");
-                    RaisePropertyChanged("Minutes");
+                    if (tMod.UpdateTime())
+                    {
+                        RaisePropertyChanged("Milliseconds");
+                        RaisePropertyChanged("Seconds");
+                        RaisePropertyChanged("Minutes");
+                    }
                 }
+                
             }
         }
 
